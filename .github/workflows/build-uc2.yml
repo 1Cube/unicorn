@@ -285,9 +285,9 @@ jobs:
           }
           - {
             os: macos-13,
-            arch: x86_64,
+            arch: arm64-v8a,
             name: 'android cmake',
-            artifact: 'Android-x86_64.7z',
+            artifact: 'Android-arm64-v8a.7z',
             archiver: '7za a',
             generators: 'Ninja'
           }
@@ -313,7 +313,7 @@ jobs:
           cmake --install . --strip
           ctest -VV -C ${{ env.BUILD_TYPE }}
 
-      - name: '🚧 Android x86_64 build'
+      - name: '🚧 Android arm64-v8a build'
         if: contains(matrix.config.name, 'android')
         shell: bash
         run: |
