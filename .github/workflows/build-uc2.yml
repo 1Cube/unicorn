@@ -284,7 +284,7 @@ jobs:
             generators: 'Ninja'
           }
           - {
-            os: macos-13,
+            os: macos-latest,
             arch: arm64-v8a,
             name: 'android cmake',
             artifact: 'Android-arm64-v8a.7z',
