@@ -87,7 +87,7 @@ jobs:
             -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
             -G "${{ matrix.config.generators }}" \
             -DCMAKE_INSTALL_PREFIX:PATH=instdir
-          cmake --build . --config ${{ env.BUILD_TYPE }}
+          cmake --build . --config ${{ env.BUILD_TYPE }} -- -v
           cmake --install . --strip
 
       - name: '🚧 AVD Cache'
