@@ -66,7 +66,7 @@ jobs:
             -G "${{ matrix.config.generators }}" \
             -DCMAKE_INSTALL_PREFIX:PATH=instdir \
             -DBUILD_SHARED_LIBS=${{ matrix.config.shared }}
-          cmake --build . --config ${{ env.BUILD_TYPE }}
+          cmake --build . --config ${{ env.BUILD_TYPE }} -- -v
           cmake --install . --strip
           ctest -VV -C ${{ env.BUILD_TYPE }}
 
