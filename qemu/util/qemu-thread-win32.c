@@ -25,7 +25,7 @@ static void error_exit(int err, const char *msg)
 
     FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_ALLOCATE_BUFFER,
                   NULL, err, 0, (LPTSTR)&pstr, 2, NULL);
-    fprintf(stderr, "qemu: %s: %s\n", msg, pstr);
+    // fprintf(stderr, "qemu: %s: %s\n", msg, pstr);
     LocalFree(pstr);
     //abort();
 }

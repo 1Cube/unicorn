@@ -58,7 +58,7 @@ int getpagesize()
 void *qemu_oom_check(void *ptr)
 {
     if (ptr == NULL) {
-        fprintf(stderr, "Failed to allocate memory: %s\n", strerror(errno));
+        // fprintf(stderr, "Failed to allocate memory: %s\n", strerror(errno));
         abort();
     }
     return ptr;

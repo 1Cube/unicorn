@@ -251,8 +251,8 @@ static inline void powerpc_excp(PowerPCCPU *cpu, int excp_model, int excp)
              * Machine check exception is not enabled.  Enter
              * checkstop state.
              */
-            fprintf(stderr, "Machine check while not allowed. "
-                    "Entering checkstop state\n");
+            // fprintf(stderr, "Machine check while not allowed. "
+            //         "Entering checkstop state\n");
 #if 0
             if (qemu_log_separate()) {
                 qemu_log("Machine check while not allowed. "

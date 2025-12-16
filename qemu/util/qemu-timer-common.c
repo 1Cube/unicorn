@@ -36,7 +36,7 @@ void init_get_clock(void)
     LARGE_INTEGER freq;
     int ret = QueryPerformanceFrequency(&freq);
     if (ret == 0) {
-        fprintf(stderr, "Could not calibrate ticks\n");
+        // fprintf(stderr, "Could not calibrate ticks\n");
         exit(1);
     }
     clock_freq = freq.QuadPart;

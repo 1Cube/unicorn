@@ -18,7 +18,7 @@
 
 static void error_exit(int err, const char *msg)
 {
-    fprintf(stderr, "qemu: %s: %s\n", msg, strerror(err));
+    // fprintf(stderr, "qemu: %s: %s\n", msg, strerror(err));
     abort();
 }
 

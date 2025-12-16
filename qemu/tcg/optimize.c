@@ -408,8 +408,8 @@ static TCGArg do_constant_folding_2(TCGOpcode op, TCGArg x, TCGArg y)
         return (uint64_t)x % ((uint64_t)y ? (uint64_t)y : 1);
 
     default:
-        fprintf(stderr,
-                "Unrecognized operation %d in do_constant_folding.\n", op);
+        // fprintf(stderr,
+        //         "Unrecognized operation %d in do_constant_folding.\n", op);
         tcg_abort();
     }
 }

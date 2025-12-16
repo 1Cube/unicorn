@@ -796,7 +796,7 @@ static RAMBlock *qemu_get_ram_block(struct uc_struct *uc, ram_addr_t addr)
         }
     }
 
-    fprintf(stderr, "Bad ram offset %" PRIx64 "\n", (uint64_t)addr);
+    // fprintf(stderr, "Bad ram offset %" PRIx64 "\n", (uint64_t)addr);
     abort();
 
 found:
@@ -1016,8 +1016,8 @@ static ram_addr_t find_ram_offset(struct uc_struct *uc, ram_addr_t size)
     }
 
     if (offset == RAM_ADDR_MAX) {
-        fprintf(stderr, "Failed to find gap of requested size: %" PRIu64 "\n",
-                (uint64_t)size);
+        // fprintf(stderr, "Failed to find gap of requested size: %" PRIu64 "\n",
+        //         (uint64_t)size);
         abort();
     }
 

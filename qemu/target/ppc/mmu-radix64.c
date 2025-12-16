@@ -287,7 +287,7 @@ int ppc_radix64_handle_mmu_fault(PowerPCCPU *cpu, vaddr eaddr, int rwx,
         }
         /* We don't support guest mode yet */
         if (lpid != 0) {
-            fprintf(stderr, "PowerNV guest support Unimplemented");
+            // fprintf(stderr, "PowerNV guest support Unimplemented");
             exit(1);
        }
 #if 0
@@ -365,7 +365,7 @@ hwaddr ppc_radix64_get_phys_page_debug(PowerPCCPU *cpu, target_ulong eaddr)
         }
         /* We don't support guest mode yet */
         if (lpid != 0) {
-            fprintf(stderr, "PowerNV guest support Unimplemented");
+            // fprintf(stderr, "PowerNV guest support Unimplemented");
             exit(1);
        }
 #if 0

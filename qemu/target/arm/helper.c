@@ -7608,11 +7608,11 @@ static void add_cpreg_to_hashtable(ARMCPU *cpu, const ARMCPRegInfo *r,
         ARMCPRegInfo *oldreg;
         oldreg = g_hash_table_lookup(cpu->cp_regs, key);
         if (oldreg && !(oldreg->type & ARM_CP_OVERRIDE)) {
-            fprintf(stderr, "Register redefined: cp=%d %d bit "
-                    "crn=%d crm=%d opc1=%d opc2=%d, "
-                    "was %s, now %s\n", r2->cp, 32 + 32 * is64,
-                    r2->crn, r2->crm, r2->opc1, r2->opc2,
-                    oldreg->name, r2->name);
+            // fprintf(stderr, "Register redefined: cp=%d %d bit "
+            //         "crn=%d crm=%d opc1=%d opc2=%d, "
+            //         "was %s, now %s\n", r2->cp, 32 + 32 * is64,
+            //         r2->crn, r2->crm, r2->opc1, r2->opc2,
+            //         oldreg->name, r2->name);
             g_assert_not_reached();
         }
     }
@@ -11797,8 +11797,8 @@ static inline void assert_hflags_rebuild_correctly(CPUARMState *env)
     uint32_t env_flags_rebuilt = rebuild_hflags_internal(env);
 
     if (unlikely(env_flags_current != env_flags_rebuilt)) {
-        fprintf(stderr, "TCG hflags mismatch (current:0x%08x rebuilt:0x%08x)\n",
-                env_flags_current, env_flags_rebuilt);
+        // fprintf(stderr, "TCG hflags mismatch (current:0x%08x rebuilt:0x%08x)\n",
+        //         env_flags_current, env_flags_rebuilt);
         abort();
     }
 #endif

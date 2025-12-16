@@ -13170,7 +13170,7 @@ static void gen_branch(DisasContext *ctx, int insn_bytes)
             tcg_gen_lookup_and_goto_ptr(tcg_ctx);
             break;
         default:
-            fprintf(stderr, "unknown branch 0x%x\n", proc_hflags);
+            // fprintf(stderr, "unknown branch 0x%x\n", proc_hflags);
             abort();
         }
     }

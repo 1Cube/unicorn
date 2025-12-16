@@ -1905,7 +1905,7 @@ static void gen_spr_BookE(CPUPPCState *env, uint64_t ivor_mask)
     for (i = 0; i < 64; i++) {
         if (ivor_mask & (1ULL << i)) {
             if (ivor_sprn[i] == SPR_BOOKE_IVORxx) {
-                fprintf(stderr, "ERROR: IVOR %d SPR is not defined\n", i);
+                // fprintf(stderr, "ERROR: IVOR %d SPR is not defined\n", i);
                 exit(1);
             }
             spr_register(env, ivor_sprn[i], ivor_names[i],
@@ -9139,13 +9139,13 @@ static void init_ppc_proc(PowerPCCPU *cpu)
         case POWERPC_FLAG_VRE:
             break;
         default:
-            fprintf(stderr, "PowerPC MSR definition inconsistency\n"
-                    "Should define POWERPC_FLAG_SPE or POWERPC_FLAG_VRE\n");
+            // fprintf(stderr, "PowerPC MSR definition inconsistency\n"
+            //         "Should define POWERPC_FLAG_SPE or POWERPC_FLAG_VRE\n");
             exit(1);
         }
     } else if (env->flags & (POWERPC_FLAG_SPE | POWERPC_FLAG_VRE)) {
-        fprintf(stderr, "PowerPC MSR definition inconsistency\n"
-                "Should not define POWERPC_FLAG_SPE nor POWERPC_FLAG_VRE\n");
+        // fprintf(stderr, "PowerPC MSR definition inconsistency\n"
+        //         "Should not define POWERPC_FLAG_SPE nor POWERPC_FLAG_VRE\n");
         exit(1);
     }
     if (env->msr_mask & (1 << 17)) {
@@ -9154,13 +9154,13 @@ static void init_ppc_proc(PowerPCCPU *cpu)
         case POWERPC_FLAG_CE:
             break;
         default:
-            fprintf(stderr, "PowerPC MSR definition inconsistency\n"
-                    "Should define POWERPC_FLAG_TGPR or POWERPC_FLAG_CE\n");
+            // fprintf(stderr, "PowerPC MSR definition inconsistency\n"
+            //         "Should define POWERPC_FLAG_TGPR or POWERPC_FLAG_CE\n");
             exit(1);
         }
     } else if (env->flags & (POWERPC_FLAG_TGPR | POWERPC_FLAG_CE)) {
-        fprintf(stderr, "PowerPC MSR definition inconsistency\n"
-                "Should not define POWERPC_FLAG_TGPR nor POWERPC_FLAG_CE\n");
+        // fprintf(stderr, "PowerPC MSR definition inconsistency\n"
+        //         "Should not define POWERPC_FLAG_TGPR nor POWERPC_FLAG_CE\n");
         exit(1);
     }
     if (env->msr_mask & (1 << 10)) {
@@ -9171,16 +9171,16 @@ static void init_ppc_proc(PowerPCCPU *cpu)
         case POWERPC_FLAG_UBLE:
             break;
         default:
-            fprintf(stderr, "PowerPC MSR definition inconsistency\n"
-                    "Should define POWERPC_FLAG_SE or POWERPC_FLAG_DWE or "
-                    "POWERPC_FLAG_UBLE\n");
+            // fprintf(stderr, "PowerPC MSR definition inconsistency\n"
+            //         "Should define POWERPC_FLAG_SE or POWERPC_FLAG_DWE or "
+            //         "POWERPC_FLAG_UBLE\n");
             exit(1);
         }
     } else if (env->flags & (POWERPC_FLAG_SE | POWERPC_FLAG_DWE |
                              POWERPC_FLAG_UBLE)) {
-        fprintf(stderr, "PowerPC MSR definition inconsistency\n"
-                "Should not define POWERPC_FLAG_SE nor POWERPC_FLAG_DWE nor "
-                "POWERPC_FLAG_UBLE\n");
+        // fprintf(stderr, "PowerPC MSR definition inconsistency\n"
+        //         "Should not define POWERPC_FLAG_SE nor POWERPC_FLAG_DWE nor "
+        //         "POWERPC_FLAG_UBLE\n");
             exit(1);
     }
     if (env->msr_mask & (1 << 9)) {
@@ -9189,13 +9189,13 @@ static void init_ppc_proc(PowerPCCPU *cpu)
         case POWERPC_FLAG_DE:
             break;
         default:
-            fprintf(stderr, "PowerPC MSR definition inconsistency\n"
-                    "Should define POWERPC_FLAG_BE or POWERPC_FLAG_DE\n");
+            // fprintf(stderr, "PowerPC MSR definition inconsistency\n"
+            //         "Should define POWERPC_FLAG_BE or POWERPC_FLAG_DE\n");
             exit(1);
         }
     } else if (env->flags & (POWERPC_FLAG_BE | POWERPC_FLAG_DE)) {
-        fprintf(stderr, "PowerPC MSR definition inconsistency\n"
-                "Should not define POWERPC_FLAG_BE nor POWERPC_FLAG_DE\n");
+        // fprintf(stderr, "PowerPC MSR definition inconsistency\n"
+        //         "Should not define POWERPC_FLAG_BE nor POWERPC_FLAG_DE\n");
         exit(1);
     }
     if (env->msr_mask & (1 << 2)) {
@@ -9204,18 +9204,18 @@ static void init_ppc_proc(PowerPCCPU *cpu)
         case POWERPC_FLAG_PMM:
             break;
         default:
-            fprintf(stderr, "PowerPC MSR definition inconsistency\n"
-                    "Should define POWERPC_FLAG_PX or POWERPC_FLAG_PMM\n");
+            // fprintf(stderr, "PowerPC MSR definition inconsistency\n"
+            //         "Should define POWERPC_FLAG_PX or POWERPC_FLAG_PMM\n");
             exit(1);
         }
     } else if (env->flags & (POWERPC_FLAG_PX | POWERPC_FLAG_PMM)) {
-        fprintf(stderr, "PowerPC MSR definition inconsistency\n"
-                "Should not define POWERPC_FLAG_PX nor POWERPC_FLAG_PMM\n");
+        // fprintf(stderr, "PowerPC MSR definition inconsistency\n"
+        //         "Should not define POWERPC_FLAG_PX nor POWERPC_FLAG_PMM\n");
         exit(1);
     }
     if ((env->flags & (POWERPC_FLAG_RTC_CLK | POWERPC_FLAG_BUS_CLK)) == 0) {
-        fprintf(stderr, "PowerPC flags inconsistency\n"
-                "Should define the time-base and decrementer clock source\n");
+        // fprintf(stderr, "PowerPC flags inconsistency\n"
+        //         "Should define the time-base and decrementer clock source\n");
         exit(1);
     }
     /* Allocate TLBs buffer when needed */

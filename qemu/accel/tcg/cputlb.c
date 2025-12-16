@@ -192,7 +192,7 @@ static void tlb_mmu_resize_locked(struct uc_struct *uc, CPUTLBDesc *desc, CPUTLB
      */
     while (fast->table == NULL || desc->iotlb == NULL) {
         if (new_size == (1 << CPU_TLB_DYN_MIN_BITS)) {
-            fprintf(stderr, "%s: %s.\n", __func__, strerror(errno));
+            // fprintf(stderr, "%s: %s.\n", __func__, strerror(errno));
             abort();    // FIXME: do not abort
         }
         new_size = MAX(new_size >> 1, 1 << CPU_TLB_DYN_MIN_BITS);

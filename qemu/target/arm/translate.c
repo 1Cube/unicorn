@@ -735,7 +735,7 @@ void arm_test_cc(TCGContext *tcg_ctx, DisasCompare *cmp, int cc)
         goto no_invert;
 
     default:
-        fprintf(stderr, "Bad condition code 0x%x\n", cc);
+        // fprintf(stderr, "Bad condition code 0x%x\n", cc);
         abort();
     }
 

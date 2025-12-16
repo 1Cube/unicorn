@@ -3064,7 +3064,7 @@ void trace_end(uc_tracer *tracer, trace_loc loc, const char *fmt, ...)
 
     va_end(args);
 
-    fprintf(stderr, "%.6fus\n",
-            (double)(end - tracer->starts[loc]) / (double)(1000));
+    // fprintf(stderr, "%.6fus\n",
+    //         (double)(end - tracer->starts[loc]) / (double)(1000));
 }
 #endif

@@ -1082,7 +1082,7 @@ static inline void code_gen_alloc(struct uc_struct *uc, size_t tb_size)
     tcg_ctx->initial_buffer_size = tcg_ctx->code_gen_buffer_size;
     uc->tcg_buffer_size = tcg_ctx->initial_buffer_size;
     if (tcg_ctx->code_gen_buffer == NULL) {
-        fprintf(stderr, "Could not allocate dynamic translator buffer\n");
+        // fprintf(stderr, "Could not allocate dynamic translator buffer\n");
         exit(1);
     }
 }

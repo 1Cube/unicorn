@@ -502,7 +502,7 @@ const ppc_hash_pte64_t *ppc_hash64_map_hptes(PowerPCCPU *cpu,
     hptes = address_space_map(CPU(cpu)->as, base + pte_offset, &plen, false,
                               MEMTXATTRS_UNSPECIFIED);
     if (plen < (n * HASH_PTE_SIZE_64)) {
-        fprintf(stderr, "%s: Unable to map all requested HPTEs\n", __func__);
+        // fprintf(stderr, "%s: Unable to map all requested HPTEs\n", __func__);
     }
     return hptes;
 }
@@ -975,7 +975,7 @@ int ppc_hash64_handle_mmu_fault(PowerPCCPU *cpu, vaddr eaddr,
         /* No entry found, check if in-memory segment tables are in use */
         if (ppc64_use_proc_tbl(cpu)) {
             /* TODO - Unsupported */
-            fprintf(stderr, "Segment Table Support Unimplemented");
+            // fprintf(stderr, "Segment Table Support Unimplemented");
             exit(1);
         }
         /* Segment still not found, generate the appropriate interrupt */

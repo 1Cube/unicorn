@@ -53,7 +53,7 @@
 #ifdef DEBUG_GNUTLS
 static void qcrypto_gnutls_log(int level, const char *str)
 {
-    fprintf(stderr, "%d: %s", level, str);
+    // fprintf(stderr, "%d: %s", level, str);
 }
 #endif
 

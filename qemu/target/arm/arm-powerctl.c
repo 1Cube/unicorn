@@ -22,7 +22,7 @@
 #define DPRINTF(fmt, args...) \
     do { \
         if (DEBUG_ARM_POWERCTL) { \
-            fprintf(stderr, "[ARM]%s: " fmt , __func__, ##args); \
+            // fprintf(stderr, "[ARM]%s: " fmt , __func__, ##args); \
         } \
     } while (0)
 
