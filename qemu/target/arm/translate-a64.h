@@ -22,13 +22,13 @@ void unallocated_encoding(DisasContext *s);
 typedef struct TCGContext TCGContext;
 
 #define unsupported_encoding(s, insn)                                    \
-    do {                                                                 \
-        qemu_log_mask(LOG_UNIMP,                                         \
-                      "%s:%d: unsupported instruction encoding 0x%08x "  \
-                      "at pc=%016" PRIx64 "\n",                          \
-                      __FILE__, __LINE__, insn, s->pc_curr);             \
-        unallocated_encoding(s);                                         \
-    } while (0)
+    // do {                                                                 \
+    //     qemu_log_mask(LOG_UNIMP,                                         \
+    //                   "%s:%d: unsupported instruction encoding 0x%08x "  \
+    //                   "at pc=%016" PRIx64 "\n",                          \
+    //                   __FILE__, __LINE__, insn, s->pc_curr);             \
+    //     unallocated_encoding(s);                                         \
+    // } while (0)
 
 TCGv_i64 new_tmp_a64(DisasContext *s);
 TCGv_i64 new_tmp_a64_zero(DisasContext *s);

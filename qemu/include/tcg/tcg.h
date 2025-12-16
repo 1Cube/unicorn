@@ -1156,7 +1156,7 @@ typedef struct TCGTargetOpDef {
 #ifndef NDEBUG
 #define tcg_abort() \
 do {\
-    fprintf(stderr, "%s:%d: tcg fatal error\n", __FILE__, __LINE__);\
+    // fprintf(stderr, "%s:%d: tcg fatal error\n", __FILE__, __LINE__);\
     abort();\
 } while (0)
 #else

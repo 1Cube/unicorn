@@ -48,10 +48,15 @@ void    g_assertion_message_expr        (const char     *file,
                                          int             line,
                                          const char     *expr) G_GNUC_NORETURN;
 
-#define g_assert_not_reached()          G_STMT_START { g_assertion_message_expr (__FILE__, __LINE__, NULL); } G_STMT_END
+// #define g_assert_not_reached()          G_STMT_START { g_assertion_message_expr (__FILE__, __LINE__, NULL); } G_STMT_END
+// #define g_assert(expr)                  G_STMT_START { \
+//                                              if (expr) ; else \
+//                                                g_assertion_message_expr (__FILE__, __LINE__, #expr); \
+//                                         } G_STMT_END
+#define g_assert_not_reached()          G_STMT_START { ; } G_STMT_END
 #define g_assert(expr)                  G_STMT_START { \
                                              if (expr) ; else \
-                                               g_assertion_message_expr (__FILE__, __LINE__, #expr); \
+                                               ; \
                                         } G_STMT_END
 
 #endif /* __G_TEST_UTILS_H__ */

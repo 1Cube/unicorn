@@ -198,7 +198,7 @@ static inline void print_log(uint32_t mask, const char* filename, uint32_t line,
  */
 #define LOG_MESSAGE(mask, fmt, ...) \
     do { \
-        print_log(mask, __FILE__, __LINE__, fmt, ## __VA_ARGS__); \
+        // print_log(mask, __FILE__, __LINE__, fmt, ## __VA_ARGS__); \
     } while (0)
 #else
 #define LOG_MESSAGE(mask, fmt, ...)

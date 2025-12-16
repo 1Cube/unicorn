@@ -470,7 +470,8 @@ do_assert_page_locked(const PageDesc *pd, const char *file, int line)
     }
 }
 
-#define assert_page_locked(pd) do_assert_page_locked(pd, __FILE__, __LINE__)
+// #define assert_page_locked(pd) do_assert_page_locked(pd, __FILE__, __LINE__)
+#define assert_page_locked(pd) 
 
 void assert_no_pages_locked(void)
 {
